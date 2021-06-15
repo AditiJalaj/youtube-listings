@@ -2,6 +2,7 @@ import './App.css';
 import {BrowserRouter as Router,Switch, Route ,Link } from 'react-router-dom'
 import VideoListing from './components/VideoListing'
 import AddForm from './components/AddForm'
+import EditForm from './components/EditForm';
 
 
 function App() {
@@ -18,11 +19,11 @@ function App() {
   </div>
  
   <Switch>
-  <Route exact path='/' component={VideoListing}></Route>
-  <Route exact path='/add' component={AddForm}></Route>
+  <Route exact path='/edit/:id' component={EditForm}/>
+  <Route exact path='/' component={VideoListing}/>
+  <Route exact path='/add' component={AddForm}/>
   
   </Switch>
-  
   </Router>
 
   

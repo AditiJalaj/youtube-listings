@@ -2,7 +2,6 @@ import {useState} from 'react'
 import {useHistory } from 'react-router-dom'
 import Select from 'react-select';
 
-
 const AddForm = () => {
 
 const history=useHistory()
@@ -12,7 +11,6 @@ const [title,setTitle]=useState('')
 const [description,setDescription]=useState('')
 const [checked,setChecked]=useState(false)
 const [selectedTag,setSelectedTag]=useState(null)
-
 
 const options=[
     {value:"Coding",label:"Coding"},
@@ -31,7 +29,6 @@ const clearInputs=()=>{
     setSelectedTag([])
     setChecked(false)
 }
-
 
 const handleSelect=(e)=>{
     //console.log('e is ',e) 
@@ -54,7 +51,7 @@ const submitForm=(e)=>{
     })
    
     localStorage.setItem(Date.now(),JSON.stringify(documents))
-    //add local storage or firebase here 
+    //add local storage 
     //2 collections 1. for hidden ,2nd for non-hidden
 
     console.log('documents',documents)

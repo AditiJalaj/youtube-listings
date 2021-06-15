@@ -4,7 +4,8 @@ import { useHistory, useParams } from 'react-router-dom'
 
 const EditForm = ({props}) => {
     
-    const { id } = useParams()
+ // console.log(props.match.params.id)
+ //edit component not re rendering on taking link
     
 
     //states for all properties like url, desc, title, etc
@@ -26,7 +27,7 @@ const [selectedTag,setSelectedTag]=useState(null)
         console.log('values',values)
     }
     return ( <>
-        <h1> EDIT DETAILS </h1>
+        <h1> I'm the edit component </h1>
         <button onClick={getAllFromLs}>CLICK </button>
         </>
          );

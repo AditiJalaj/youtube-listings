@@ -1,39 +1,45 @@
-import EachVideo from './EachVideo'
+import EachVideo from "./EachVideo";
+import { useEffect, useState } from "react";
 
 const VideoListing = () => {
+  //this should have all movies collection load up here
 
-    //this should have all movies collection load up here
-    const arr=[{
-        video_url:'test',
-        video_title:'1st title',
-        video_des:'description',
-        video_tag:"selectedTag",
-        hidden:"checked"
-    },
-    {
-        video_url:'2nd',
-        video_title:'2nd title',
-        video_des:'description',
-        video_tag:"selectedTag",
-        hidden:"checked"
-    },
-    {
-        video_url:'3rd',
-        video_title:'3rd title',
-        video_des:'description',
-        video_tag:"selectedTag",
-        hidden:"checked"
-    },
-]
-    //useeffect to get items from backend 
+  const [allval, setAllval] = useState([]);
 
-    return ( <>
-        {arr && arr.map((i)=>{
-            return <EachVideo key={i.video_url} title={i.video_title}
-            tag={i.video_tag}
-                 />
+  //useeffect to get items from backend
+  useEffect(() => {
+    var values = [];
+    const keysArr = Object.keys(localStorage); //[1222,13333]
+    var i = keysArr.length;
+    while (i--) {
+      values.push(JSON.parse(localStorage.getItem(keysArr[i])));
+    }
+    console.log("values of localstorage", values);
+    setAllval(values);
+  }, []);
+
+  //console.log('all val', allval)
+
+  return (
+    <>
+      {allval &&
+        allval.map((i) => {
+          return i.map((j) => {
+            return (
+              <EachVideo
+                key={j.video_id}
+                title={j.video_title}
+                description={j.video_des}
+                tag={j.video_tag.map((z) => z.value)}
+                hiddenvid={j.hidden}
+                id={j.video_id}
+                url={j.video_url}
+              />
+            );
+          });
         })}
-        </> );
-}
- 
+    </>
+  );
+};
+
 export default VideoListing;
