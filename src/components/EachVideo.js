@@ -1,5 +1,4 @@
 import { useState } from "react";
-import EditForm from "./EditForm";
 import {Link } from 'react-router-dom'
 
 const EachVideo = ({ title, description, tag, hiddenvid, id, url}) => {
@@ -19,13 +18,12 @@ const EachVideo = ({ title, description, tag, hiddenvid, id, url}) => {
         {!hidden && <div style={{margin:'12px',border:'1px solid blue'}}>
         Each Video <h3 style={{backgroundColor:'aqua', display:'inline'}}>{title}</h3> 
         <h4>{tag}</h4> 
-        <button > Go to Details</button> 
-        {/* go to details will be a link like view lyrics  */}
+        <Link to={`/videodetails/${id}`}>Go to Details</Link>
+        
         <button onClick={hideHandler}>Hide Movie?</button>
         
-       
         <Link to={`/edit/${id}`}>EDIT</Link>
-        
+
 
         </div>}
         </> );

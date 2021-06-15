@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams,Link } from "react-router-dom";
 import Select from "react-select";
 
 const EditForm = () => {
@@ -52,8 +52,7 @@ const EditForm = () => {
   };
   return (
     <>
-      <h1> I'm the edit component </h1>
-
+      <Link to='/'>GO BaCK</Link>
       <h1>EDIT VIDEO </h1>
       <form onSubmit={submitForm}>
         <section>
