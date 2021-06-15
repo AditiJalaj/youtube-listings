@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const useVideos = () => {
   const [allval, setAllval] = useState([]);
 
-  //useeffect to get items from backend
+  //useeffect to get items from localstorage
   useEffect(() => {
     var values = [];
     const keysArr = Object.keys(localStorage); //[1222,13333]

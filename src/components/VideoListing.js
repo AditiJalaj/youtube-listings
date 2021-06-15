@@ -7,9 +7,10 @@ const VideoListing = () => {
 
   const {allval}=useVideos()
 
+ 
  //render only non-hidden vids
-const truearr=allval.map((i)=>{
-    return i.filter(j=>j.hidden!==true)
+ const truearr=allval.map((i)=>{
+      return i.filter(j=>j.hidden!==true)
 })
 
   return (
@@ -24,6 +25,7 @@ const truearr=allval.map((i)=>{
                 description={j.video_des}
                 tag={j.video_tag.map((z) => z.value)}
                 hiddenvid={j.hidden}
+            
                 id={j.video_id}
                 url={j.video_url}
               />
