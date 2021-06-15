@@ -6,7 +6,6 @@ const VideoListing = () => {
   //this should have all movies collection load up here
 
   const {allval}=useVideos()
-
  
  //render only non-hidden vids
  const truearr=allval.map((i)=>{
@@ -25,7 +24,6 @@ const VideoListing = () => {
                 description={j.video_des}
                 tag={j.video_tag.map((z) => z.value)}
                 hiddenvid={j.hidden}
-            
                 id={j.video_id}
                 url={j.video_url}
               />

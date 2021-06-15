@@ -19,7 +19,9 @@ const options=[
     {value:"Music",label:"Music"},
     {value:"Food",label:"Food"},
     {value:"Travel",label:"Travel"},
-    {value:"Movies",label:"Movies"}
+    {value:"Movies",label:"Movies"}, 
+    { value: "Health", label: "Health" },
+    { value: "Life", label: "Life" }
 ]
 
 const clearInputs=()=>{

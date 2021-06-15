@@ -2,14 +2,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const EachVideo = ({ title, description, tag, hiddenvid, id, url }) => {
-  console.log(`for ${title} the hidden is ${hiddenvid}`);
 
   const [hidden, setHidden] = useState(false);
 
   const hideHandler = () => {
-    
     setHidden(!hidden);
-
 
     //to modify the localstorage item as !hiddenvid
     var documents = [];
@@ -21,11 +18,10 @@ const EachVideo = ({ title, description, tag, hiddenvid, id, url }) => {
       hidden: !hiddenvid,
       video_id: id,
     });
-
     localStorage.setItem(id, JSON.stringify(documents));
-   
   };
 
+  console.log('tag si ',tag)
   return (
     <>
       {!hidden && (
@@ -34,9 +30,11 @@ const EachVideo = ({ title, description, tag, hiddenvid, id, url }) => {
           <h3 style={{ backgroundColor: "aqua", display: "inline" }}>
             {title}
           </h3>
+          
           <h4>{tag}</h4>
+
           <Link to={`/videodetails/${id}`}>Go to Details</Link>
-          <button onClick={hideHandler}>Hide Movie?</button>
+          <button onClick={hideHandler}>{ hiddenvid ?'SHOW MOVIE':'HIDE MOVIE'}</button>
           <Link to={`/edit/${id}`}>EDIT</Link>
         </div>
       )}
