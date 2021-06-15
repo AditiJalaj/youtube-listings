@@ -1,7 +1,6 @@
 import { useState } from "react";
 import EditForm from "./EditForm";
-import { useHistory, useParams } from 'react-router-dom'
-import {BrowserRouter as Router, Route ,Link } from 'react-router-dom'
+import {Link } from 'react-router-dom'
 
 const EachVideo = ({ title, description, tag, hiddenvid, id, url}) => {
 
