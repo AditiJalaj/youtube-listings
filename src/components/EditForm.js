@@ -26,7 +26,8 @@ const EditForm = () => {
     { value: "Travel", label: "Travel" },
     { value: "Movies", label: "Movies" },
     { value: "Health", label: "Health" },
-    { value: "Life", label: "Life" }
+    { value: "Life", label: "Life" },
+    {value:"Entertainment",label:"Entertainment"}
   ];
 
 

@@ -10,7 +10,7 @@ const [url,setUrl]=useState('')
 const [title,setTitle]=useState('')
 const [description,setDescription]=useState('')
 const [checked,setChecked]=useState(false)
-const [selectedTag,setSelectedTag]=useState(null)
+const [selectedTag,setSelectedTag]=useState()
 
 const options=[
     {value:"Coding",label:"Coding"},
@@ -20,8 +20,9 @@ const options=[
     {value:"Food",label:"Food"},
     {value:"Travel",label:"Travel"},
     {value:"Movies",label:"Movies"}, 
-    { value: "Health", label: "Health" },
-    { value: "Life", label: "Life" }
+    { value:"Health", label: "Health" },
+    { value:"Life", label: "Life" },
+    {value:"Entertainment",label:"Entertainment"}
 ]
 
 const clearInputs=()=>{
@@ -63,7 +64,7 @@ const submitForm=(e)=>{
 }
 
     return ( <>
-        <Link to='/'>GO BaCK</Link>
+        <Link to='/'>Go back</Link>
         <h1> ADD NEW VIDEO </h1>
         <form onSubmit={submitForm}>
 

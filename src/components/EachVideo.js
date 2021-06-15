@@ -26,7 +26,6 @@ const EachVideo = ({ title, description, tag, hiddenvid, id, url }) => {
     <>
       {!hidden && (
         <div style={{ margin: "12px", border: "1px solid blue" }}>
-          Each Video{" "}
           <h3 style={{ backgroundColor: "aqua", display: "inline" }}>
             {title}
           </h3>

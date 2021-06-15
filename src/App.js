@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter as Router,Switch, Route ,Link } from 'react-router-dom'
+import {BrowserRouter as Router,Switch, Route ,NavLink } from 'react-router-dom'
 import VideoListing from './components/VideoListing'
 import AddForm from './components/AddForm'
 import EditForm from './components/EditForm';
@@ -14,18 +14,16 @@ function App() {
   <Router>
   <div style={{display:"flex",justifyContent:"space-around"}}>
  
-  <button><Link to='/add'>ADD</Link></button>
-  
-  {/* replace below two with buttons and onclick -set state to show hidden or all videos components*/}
-  <button><Link to='/'>ALL VIDEOS</Link></button>
-  <button><Link to='/hidden'>HIDDEN</Link></button>
+ <NavLink exact={true} activeClassName='is-active' to='/add'>ADD</NavLink>
+ <NavLink activeClassName='is-active' to='/'>ALL VIDEOS</NavLink>
+ <NavLink to='/hidden'>HIDDEN</NavLink>
   </div>
  
   <Switch>
-  <Route exact path='/videodetails/:id' component={VideoDetails}/>
-  <Route exact path='/edit/:id' component={EditForm}/>
   <Route exact path='/' component={VideoListing}/>
   <Route exact path='/add' component={AddForm}/>
+  <Route exact path='/videodetails/:id' component={VideoDetails}/>
+  <Route exact path='/edit/:id' component={EditForm}/>
   <Route exact path='/hidden' component={Hidden}/>
   
   </Switch>

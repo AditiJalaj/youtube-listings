@@ -6,7 +6,7 @@ const useVideos = () => {
   //useeffect to get items from localstorage
   useEffect(() => {
     var values = [];
-    const keysArr = Object.keys(localStorage); //[1222,13333]
+    const keysArr = Object.keys(localStorage); 
     var i = keysArr.length;
     while (i--) {
       values.push(JSON.parse(localStorage.getItem(keysArr[i])));

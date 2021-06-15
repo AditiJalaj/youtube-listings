@@ -2,10 +2,10 @@ import EachVideo from "./EachVideo";
 import { useEffect, useState } from "react";
 import useVideos from '../custom-hooks/useVideos'
 
+
 const VideoListing = () => {
   //this should have all movies collection load up here
-
-  const {allval}=useVideos()
+   const {allval}=useVideos()
  
  //render only non-hidden vids
  const truearr=allval.map((i)=>{
