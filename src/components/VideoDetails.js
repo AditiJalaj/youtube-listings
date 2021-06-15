@@ -1,9 +1,8 @@
-import { useHistory, useParams,Link } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 
 const VideoDetails = () => {
 
-    //even this component should link to edit form
-
+    
     let {id}= useParams()
     const det = JSON.parse(localStorage.getItem(id));
     const url = (det[0].video_url);
@@ -15,14 +14,16 @@ const VideoDetails = () => {
     var embedUrl="https://www.youtube.com/embed/"+res[1];
     
     return ( <>
-
         <Link to ='/'>Go back</Link>
+        <div>
         <iframe width="560" 
          height="315"
          src={embedUrl}
          frameborder="0" 
          allow="autoplay; encrypted-media" 
          allowfullscreen></iframe>
+         </div>
+         <Link to={`/edit/${id}`}>EDIT</Link>
         </> );
 }
  

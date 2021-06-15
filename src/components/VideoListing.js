@@ -1,29 +1,21 @@
 import EachVideo from "./EachVideo";
 import { useEffect, useState } from "react";
+import useVideos from '../custom-hooks/useVideos'
 
 const VideoListing = () => {
   //this should have all movies collection load up here
 
-  const [allval, setAllval] = useState([]);
+  const {allval}=useVideos()
 
-  //useeffect to get items from backend
-  useEffect(() => {
-    var values = [];
-    const keysArr = Object.keys(localStorage); //[1222,13333]
-    var i = keysArr.length;
-    while (i--) {
-      values.push(JSON.parse(localStorage.getItem(keysArr[i])));
-    }
-    console.log("values of localstorage", values);
-    setAllval(values);
-  }, []);
-
-  //console.log('all val', allval)
+ //render only non-hidden vids
+const truearr=allval.map((i)=>{
+    return i.filter(j=>j.hidden!==true)
+})
 
   return (
     <>
-      {allval &&
-        allval.map((i) => {
+      {truearr &&
+        truearr.map((i) => {
           return i.map((j) => {
             return (
               <EachVideo

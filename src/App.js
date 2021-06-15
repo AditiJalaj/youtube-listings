@@ -4,6 +4,7 @@ import VideoListing from './components/VideoListing'
 import AddForm from './components/AddForm'
 import EditForm from './components/EditForm';
 import VideoDetails from './components/VideoDetails';
+import Hidden from './components/Hidden';
 
 
 function App() {
@@ -11,12 +12,13 @@ function App() {
    <>
   
   <Router>
-  <div>
-  <Link to='/add'>ADD</Link>
-  <Link to='/'>HOME</Link>
+  <div style={{display:"flex",justifyContent:"space-around"}}>
+ 
+  <button><Link to='/add'>ADD</Link></button>
+  
   {/* replace below two with buttons and onclick -set state to show hidden or all videos components*/}
-  <Link to='/all'>ALL</Link>
-  <Link to='/hiddenvideos'>HIDDEN</Link>
+  <button><Link to='/'>ALL VIDEOS</Link></button>
+  <button><Link to='/hidden'>HIDDEN</Link></button>
   </div>
  
   <Switch>
@@ -24,6 +26,7 @@ function App() {
   <Route exact path='/edit/:id' component={EditForm}/>
   <Route exact path='/' component={VideoListing}/>
   <Route exact path='/add' component={AddForm}/>
+  <Route exact path='/hidden' component={Hidden}/>
   
   </Switch>
   </Router>
