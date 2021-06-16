@@ -1,70 +1,24 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Youtube Listings App with Local Storage - Used ReactJS, React Hooks and Custom Hooks. Used React-Select for searchable multi-select dropdown.
 
-## Available Scripts
+Demo link - 
 
-In the project directory, you can run:
+Features - 
+- User should be able add youtube video links only
+- User should be able to edit the uploaded videos
+- While adding/editing following data should be captured and validated, "video url" "title", "description" and "tags"(validate video url to be just a youtube link, no need to verify if it is valid or not)
+- Tags will be a searchable multi-select dropdown from a predefined list(or a multi-select typeahead)
+- Add/edit form should have a checkbox to mark the video as hidden
+- User will see 2 tabs, "All videos" and "Hidden videos"
+- "All videos" tab will show all uploaded videos that are not hidden, "Hidden videos" will show videos that are marked as hidden
+- Add button should be somewhere on the listing page, and should redirect to a add page. On success of add redirect back to the listing page
+- Video listing page will be list of videos uploaded with title and tags as pills. action items will  be hide video, edit(form in pop-up) and go to details
+- Video details page will show the video in an iframe(example below). there should be a edit button that should prefill the video details in a form inside of a pop-up to update
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Future Updates-
+- show video thumbnail on listing page
+- User should be able to filter the video by title, description or tags
+- Use passport auth with some pre-defined users that can login as uploaders
+- uploaders should see my videos tab that shows videos uploaded by them only
+- While adding tags, user can type and search the desired value from a pre-defined list. If the value does not exist, it should show the searched text in the result and on selection ot should be appended to the existing list and should show up for subsequent addition/editing.(For example, pre-defined list has "react", "react-native", "react-redux" and user types "react-apollo" it should still show up as a result and the subsequent "react" search should list all four options)
