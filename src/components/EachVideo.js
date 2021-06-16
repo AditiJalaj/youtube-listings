@@ -37,17 +37,17 @@ const EachVideo = ({ title, description, tag, hiddenvid, id, url }) => {
       {!hidden && (
         <div style={{ margin: "12px", border: "1px solid blue" }}>
           <h3 style={{ backgroundColor: "aqua", display: "inline" }}>
-            {title}
-          </h3>
+            {title}  </h3>
           
-          <div >
+          
+          <div>
           {tag && tag.map((i)=>{
             return <h4 className="tags">{i}</h4>
           } )}
           </div>
 
           <Link to={`/videodetails/${id}`}>Go to Details</Link>
-          <button onClick={hideHandler}>{ hiddenvid ?'Add To All Videos':'Add to Hidden Videos'}</button>
+          <button onClick={hideHandler}>Add to Hidden Videos</button> 
           <Link to={`/edit/${id}`}>EDIT</Link>
         </div>
       )}
