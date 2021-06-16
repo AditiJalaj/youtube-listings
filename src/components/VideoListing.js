@@ -1,5 +1,4 @@
 import EachVideo from "./EachVideo";
-import { useEffect, useState } from "react";
 import useVideos from '../custom-hooks/useVideos'
 
 

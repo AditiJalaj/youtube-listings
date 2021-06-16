@@ -1,5 +1,4 @@
 import useVideos from "../custom-hooks/useVideos";
-import EachVideo from "./EachVideo";
 import {Link} from 'react-router-dom'
 
 const Hidden = () => {

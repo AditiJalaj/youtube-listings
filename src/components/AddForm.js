@@ -54,9 +54,7 @@ const submitForm=(e)=>{
     })
    
     localStorage.setItem(Date.now(),JSON.stringify(documents))
-    //add local storage 
-    //2 collections 1. for hidden ,2nd for non-hidden
-
+   
     console.log('documents',documents)
     clearInputs()
     alert("added new vid and going back to home")
@@ -64,7 +62,7 @@ const submitForm=(e)=>{
 }
 
     return ( <>
-        <Link to='/'>Go back</Link>
+       <button> <Link to='/'>Go back</Link> </button> 
         <h1> ADD NEW VIDEO </h1>
         <form onSubmit={submitForm}>
 
@@ -102,7 +100,6 @@ const submitForm=(e)=>{
          </section>
          
           <section>
-       
             <label htmlFor="tags" >Choose Tag: </label>
             <Select 
             value={selectedTag}
@@ -112,7 +109,6 @@ const submitForm=(e)=>{
             options={options}
             onChange={handleSelect}
             />
-
           </section>
 
           <section> 
@@ -122,9 +118,9 @@ const submitForm=(e)=>{
            type="checkbox" defaultChecked={checked}
            onChange={()=>{setChecked(!checked)}}
           />
-
         </section>
-        <input type="submit"/>
+
+        <input  className="submit" type="submit"/>
         
         </form>
         

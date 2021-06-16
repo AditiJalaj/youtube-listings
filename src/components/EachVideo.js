@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import Hidden from "./Hidden";
+
 
 const EachVideo = ({ title, description, tag, hiddenvid, id, url }) => {
 
