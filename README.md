@@ -1,7 +1,8 @@
 
 Youtube Listings App with Local Storage - Used ReactJS, React Hooks and Custom Hooks. Used React-Select for searchable multi-select dropdown.
 
-Demo link - 
+Demo link - https://youtube-listings.netlify.app/
+Demo video - https://www.loom.com/share/bf5a42eca06649fd9c6de3dbbee16a9a
 
 Features - 
 - User should be able add youtube video links only
