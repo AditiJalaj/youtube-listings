@@ -64,7 +64,7 @@ const submitForm=(e)=>{
     return ( <>
        <button> <Link to='/'>Go back</Link> </button> 
         <h1> ADD NEW VIDEO </h1>
-        <form onSubmit={submitForm}>
+        <form className="form" onSubmit={submitForm}>
 
         <section>
         <label htmlFor="url">Enter Youtube Video Url:</label>
@@ -120,8 +120,9 @@ const submitForm=(e)=>{
           />
         </section>
 
-        <input  className="submit" type="submit"/>
-        
+
+        <input  className='primary-button' type="submit" />
+       
         </form>
         
         

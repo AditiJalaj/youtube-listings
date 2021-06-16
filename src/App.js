@@ -12,13 +12,11 @@ function App() {
    <>
   
   <Router>
+
   <div className="nav">
- 
  <NavLink exact activeClassName='is-active' to='/'>ALL VIDEOS</NavLink>
  <NavLink  exact activeClassName='is-active' to='/hidden'>HIDDEN</NavLink>
   </div>
- 
-  <button className="primary-button"><NavLink exact={true} activeClassName='is-active' to='/add'>ADD NEW</NavLink></button>
   
   <Switch>
   <Route exact path='/' component={VideoListing}/>
@@ -26,7 +24,6 @@ function App() {
   <Route exact path='/videodetails/:id' component={VideoDetails}/>
   <Route exact path='/edit/:id' component={EditForm}/>
   <Route exact path='/hidden' component={Hidden}/>
-  
   </Switch>
   </Router>
 

@@ -23,12 +23,16 @@ const Hidden = () => {
 
                 <div>
                   {j.video_tag.map((z) => (
-                    <h4 className="tags"> {z.value}</h4>
+                      //array of strings
+                    <h4 className="tags">{z.value}</h4>
                   ))}
                 </div>
 
-                <Link to={`/videodetails/${j.video_id}`}>Go to Details</Link>
-                <Link to={`/edit/${j.video_id}`}>EDIT</Link>
+                <div style={{display: 'flex',
+                justifyContent: 'space-around'}}>
+                <Link className='actionitems' to={`/videodetails/${j.video_id}`}>Go to Details</Link>
+                <Link   className='actionitems' to={`/edit/${j.video_id}`}>EDIT</Link>
+                </div>
               </div>
             );
           });

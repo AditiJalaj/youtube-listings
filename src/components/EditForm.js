@@ -33,7 +33,6 @@ const EditForm = () => {
 
   var documents = [];
   const submitForm = (e) => {
-    console.log("submit form");
     e.preventDefault();
 
     documents.push({
@@ -55,9 +54,9 @@ const EditForm = () => {
   };
   return (
     <>
-      <Link to='/'>GO BaCK</Link>
+    <button> <Link to='/'>Go back</Link> </button> 
       <h1>EDIT VIDEO </h1>
-      <form onSubmit={submitForm}>
+      <form className="form"  onSubmit={submitForm}>
         <section>
           <label htmlFor="url">Enter Youtube Video Url:</label>
           <input
@@ -122,8 +121,9 @@ const EditForm = () => {
             }}
           />
         </section>
-        <input type="submit" />
+        <input className='primary-button' type="submit" />
       </form>
+      
     </>
   );
 };

@@ -14,7 +14,7 @@ const VideoDetails = () => {
     var embedUrl="https://www.youtube.com/embed/"+res[1];
     
     return ( <>
-        <Link to ='/'>Go back</Link>
+        <button> <Link to='/'>Go back</Link> </button> 
         <div>
         <iframe width="560" 
          height="315"
@@ -23,7 +23,11 @@ const VideoDetails = () => {
          allow="autoplay; encrypted-media" 
          allowfullscreen></iframe>
          </div>
-         <Link to={`/edit/${id}`}>EDIT</Link>
+
+         <div style={{display:'flex',textAlign:'center'}}>
+         <Link className='actionitems' to={`/edit/${id}`}>EDIT</Link>
+         </div>
+        
         </> );
 }
  
