@@ -10,7 +10,7 @@ const [url,setUrl]=useState('')
 const [title,setTitle]=useState('')
 const [description,setDescription]=useState('')
 const [checked,setChecked]=useState(false)
-const [selectedTag,setSelectedTag]=useState()
+const [selectedTag,setSelectedTag]=useState([])
 
 const options=[
     {value:"Coding",label:"Coding"},

@@ -1,0 +1,39 @@
+.is-active{
+    background-color: #1E6091;
+   text-decoration: none;
+   color:white;
+   font-weight:bolder;
+   padding: 10px;
+}
+
+.nav{
+    display:flex;
+    justify-content:space-around;
+    background-color:#52B69A;
+    padding: 10px;
+}
+.primary-button{
+    background-color: tomato;
+    color:white;
+    text-decoration: none;
+}
+button{
+    padding:20px;
+    margin: 10px;
+    background-color: #76C893;
+    font-weight:bolder;
+    font-size: large;
+    display: inline;
+    color:white;
+}
+button:hover{
+    background-color: #EDF6CA;
+}
+.tags{
+    background-color:#184E77;
+    padding:10px;
+    color:white;
+
+    max-width: 20%;
+   
+}

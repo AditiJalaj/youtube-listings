@@ -1,12 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Hidden from "./Hidden";
 
 const EachVideo = ({ title, description, tag, hiddenvid, id, url }) => {
 
   const [hidden, setHidden] = useState(false);
 
+  
   const hideHandler = () => {
     setHidden(!hidden);
+
+    //below points to correct value and it's being set to localstorag too 
+    //but in hidden or videolistings it's getting it undefined
+    //check the edit details
+    console.log('the new  tag on hide handler is ',tag)
 
     //to modify the localstorage item as !hiddenvid
     var documents = [];
@@ -21,19 +28,26 @@ const EachVideo = ({ title, description, tag, hiddenvid, id, url }) => {
     localStorage.setItem(id, JSON.stringify(documents));
   };
 
-  console.log('tag si ',tag)
+  //on changing the hide or show the tag is going undefined since state is not passed correctly
+
+ 
   return (
     <>
+    
       {!hidden && (
         <div style={{ margin: "12px", border: "1px solid blue" }}>
           <h3 style={{ backgroundColor: "aqua", display: "inline" }}>
             {title}
           </h3>
           
-          <h4>{tag}</h4>
+          <div >
+          {tag && tag.map((i)=>{
+            return <h4 className="tags">{i}</h4>
+          } )}
+          </div>
 
           <Link to={`/videodetails/${id}`}>Go to Details</Link>
-          <button onClick={hideHandler}>{ hiddenvid ?'SHOW MOVIE':'HIDE MOVIE'}</button>
+          <button onClick={hideHandler}>{ hiddenvid ?'Add To All Videos':'Add to Hidden Videos'}</button>
           <Link to={`/edit/${id}`}>EDIT</Link>
         </div>
       )}
